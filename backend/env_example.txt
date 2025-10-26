@@ -1,0 +1,12 @@
+# Database Configuration
+DATABASE_URL=postgresql://username:password@localhost/cafe_fausse
+
+# Flask Configuration
+SECRET_KEY=your-secret-key-here
+FLASK_ENV=development
+FLASK_DEBUG=True
+
+# Restaurant Information
+RESTAURANT_NAME=Café Fausse
+RESTAURANT_ADDRESS=1234 Culinary Ave, Suite 100, Washington, DC 20002
+RESTAURANT_PHONE=(202) 555-4567

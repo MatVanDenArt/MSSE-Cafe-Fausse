@@ -80,28 +80,28 @@ const Gallery = () => {
       src: "/images/Chef - Pierre Dubois.webp",
       alt: "Chef Pierre Dubois",
       category: "chef",
-      title: "Pierre Dubois - Executive Chef",
+      title: "Chef Pierre Dubois - Executive Chef",
     },
     {
       id: 20,
       src: "/images/Chef - Marie Dubois.webp",
       alt: "Chef Marie Dubois",
       category: "chef",
-      title: "Marie Dubois - Master Chef",
+      title: "Chef Marie Dubois - Master Chef",
     },
     {
       id: 21,
       src: "/images/Chef - Jean-Luc Martin.webp",
       alt: "Chef Jean-Luc Martin",
       category: "chef",
-      title: "Jean-Luc Martin - Sous Chef",
+      title: "Chef Jean-Luc Martin - Sous Chef",
     },
     {
       id: 22,
       src: "/images/Chef - Sophie Laurent.webp",
       alt: "Chef Sophie Laurent",
       category: "chef",
-      title: "Sophie Laurent - Sous Chef",
+      title: "Chef Sophie Laurent - Sous Chef",
     },
     {
       id: 8,
@@ -520,14 +520,8 @@ const Gallery = () => {
             className="lightbox-content"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              className="lightbox-close"
-              onClick={closeLightbox}
-              aria-label="Close lightbox"
-            >
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 6L6 18M6 6l12 12" />
-              </svg>
+            <button className="lightbox-close" onClick={closeLightbox}>
+              ×
             </button>
             <button
               className="lightbox-nav lightbox-prev"

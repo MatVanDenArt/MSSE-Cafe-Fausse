@@ -49,7 +49,7 @@
 }
 
 .newsletter-input::placeholder {
-  color: rgb(153 153 153 / 100%);
+  color: #ccc;
 }
 
 .newsletter-input:focus {

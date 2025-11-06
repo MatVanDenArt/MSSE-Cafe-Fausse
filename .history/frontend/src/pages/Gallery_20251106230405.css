@@ -331,7 +331,7 @@
 
 .lightbox-close {
   position: absolute;
-  top: 0;
+  top: -60px;
   right: -80px;
   background: rgba(193, 155, 102, 0.15);
   border: 2px solid rgba(193, 155, 102, 0.4);

@@ -331,39 +331,15 @@
 
 .lightbox-close {
   position: absolute;
-  top: 0;
-  right: -80px;
-  background: rgba(193, 155, 102, 0.15);
-  border: 2px solid rgba(193, 155, 102, 0.4);
-  color: #c19b66;
+  top: -50px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
   cursor: pointer;
-  padding: 1rem;
-  border-radius: 50%;
-  transition: all 0.3s ease;
+  padding: 0.5rem;
   z-index: 2001;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(10px);
-  flex-shrink: 0;
-}
-
-.lightbox-close:hover {
-  background: rgba(193, 155, 102, 0.25);
-  border-color: rgba(193, 155, 102, 0.6);
-  transform: scale(1.1) rotate(90deg);
-}
-
-.lightbox-close svg {
-  width: 24px;
-  height: 24px;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 2.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
 }
 
 .lightbox-nav {
@@ -715,14 +691,7 @@
   .lightbox-close {
     top: 10px;
     right: 10px;
-    width: 45px;
-    height: 45px;
-    padding: 0.75rem;
-  }
-
-  .lightbox-close svg {
-    width: 18px;
-    height: 18px;
+    font-size: 1.5rem;
   }
 }
 

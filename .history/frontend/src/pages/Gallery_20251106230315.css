@@ -331,8 +331,9 @@
 
 .lightbox-close {
   position: absolute;
-  top: 0;
+  top: 50%;
   right: -80px;
+  transform: translateY(-50%);
   background: rgba(193, 155, 102, 0.15);
   border: 2px solid rgba(193, 155, 102, 0.4);
   color: #c19b66;
@@ -353,7 +354,7 @@
 .lightbox-close:hover {
   background: rgba(193, 155, 102, 0.25);
   border-color: rgba(193, 155, 102, 0.6);
-  transform: scale(1.1) rotate(90deg);
+  transform: translateY(-50%) scale(1.1) rotate(90deg);
 }
 
 .lightbox-close svg {

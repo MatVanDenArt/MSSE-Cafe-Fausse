@@ -1,0 +1,156 @@
+# 🍽️ Café Fausse - Quick Demo Guide
+
+## 🚀 Quick Start (2 minutes)
+
+### Option A: Use the Startup Scripts (Recommended)
+
+**Windows (CMD):**
+```bash
+scripts\start_dev.bat
+```
+
+**Windows (PowerShell):**
+```powershell
+.\scripts\start_dev.ps1
+```
+
+**Linux/Mac:**
+```bash
+./scripts/start_dev.sh
+```
+
+This will automatically start both servers in separate windows.
+
+### Option B: Manual Start
+
+#### 1. Start the Backend
+
+```bash
+cd backend
+python app.py
+```
+
+_Keep this terminal open - you should see "Running on http://127.0.0.1:5000"_
+
+#### 2. Start the Frontend (New Terminal)
+
+```bash
+cd frontend
+npm start
+```
+
+_Keep this terminal open - you should see "Local: http://localhost:3000"_
+
+### 3. Run the Demo Tests
+
+```bash
+# Option A: Use the batch file (Windows)
+scripts\run_demo_tests.bat
+
+# Option B: Run directly
+cd backend\tests
+python test._system_health_check.py
+```
+
+## 🎭 What the Demo Shows
+
+### ✅ **API Health Check**
+
+- Verifies the Flask backend is running
+- Tests database connectivity
+
+### ✅ **Newsletter Signup**
+
+- Customer can subscribe to newsletter
+- Data is stored in PostgreSQL
+
+### ✅ **Single Reservation**
+
+- Customer can make a reservation
+- System assigns a table automatically
+- Data is saved to database
+
+### ✅ **Overbooking Prevention (Main Feature)**
+
+- **Books exactly 30 tables** for the same time slot
+- **Blocks the 31st booking** with clear error message
+- **No table conflicts** - each table assigned only once
+- **Perfect demonstration** of capacity management
+
+### ✅ **Restaurant Info & Menu**
+
+- API returns restaurant details
+- Menu data is properly structured
+
+## 📊 Expected Demo Results
+
+```
+🎉 ALL TESTS PASSED! The system is working perfectly.
+
+📊 OVERBOOKING DEMO RESULTS:
+   ✅ 30 Successful Bookings
+   ❌ 1 Blocked Booking (31st attempt)
+   🎯 All 30 Tables Assigned (1-30)
+   🛡️ Perfect Overbooking Prevention
+```
+
+## 🌐 Web Interface Demo
+
+1. **Open**: http://localhost:3000
+2. **Navigate**: Try the reservation form
+3. **Test**: Fill out and submit a reservation
+4. **Verify**: Check that it appears in the database
+
+## 🔍 Verify Database Data
+
+```bash
+cd backend\scripts
+python view_data.py
+```
+
+This shows:
+
+- All customers
+- All reservations
+- Table assignments
+- Newsletter subscribers
+
+## 🎯 Key Demo Points
+
+1. **Full-Stack Application**: React frontend + Flask backend + PostgreSQL
+2. **Real Database**: All data persists in PostgreSQL
+3. **Overbooking Prevention**: Exactly 30 tables per time slot
+4. **Smart Table Assignment**: No conflicts or duplicates
+5. **Professional Error Handling**: Clear user feedback
+6. **Responsive Design**: Works on desktop and mobile
+
+## 🚨 Troubleshooting
+
+### Backend Won't Start
+
+- Check PostgreSQL is running
+- Verify database exists: `Cafe_Fausse_Database`
+- Check port 5000 is free
+
+### Frontend Won't Start
+
+- Check port 3000 is free
+- Run `npm install` if needed
+
+### Tests Fail
+
+- Ensure both servers are running
+- Check database connection
+- Clear browser cache
+
+## 📁 Demo Files
+
+- `scripts/run_demo_tests.bat` - One-click demo runner
+- `backend/tests/test._system_health_check.py` - Main test suite (comprehensive system health check)
+- `backend/tests/test_full_overbooking.py` - Focused overbooking prevention test
+- `backend/scripts/view_data.py` - Database viewer
+- `backend/tests/TESTING_SUITE_README.md` - Detailed documentation
+
+---
+
+**Perfect for**: Presentations, demos, testing, validation, and showcasing the complete restaurant management system! 🎊

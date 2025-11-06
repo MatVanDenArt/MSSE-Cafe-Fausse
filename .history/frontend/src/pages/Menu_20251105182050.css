@@ -1,0 +1,319 @@
+.menu {
+  padding: 2rem 0;
+  position: relative;
+  background-color: #0b161a;
+}
+
+.menu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(11, 22, 26, 0.7);
+  z-index: 0;
+}
+
+.menu > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #c8c8c8;
+  font-weight: 300;
+}
+
+.section-description .desktop-text,
+.section-description .mobile-text {
+  color: #c8c8c8;
+}
+
+.section-description .desktop-text {
+  display: block;
+}
+
+.section-description .mobile-text {
+  display: none;
+}
+
+.menu-disclaimer {
+  font-style: italic;
+  color: #c8c8c8;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.menu-content {
+  max-width: 1200px;
+  margin: 4rem auto 0;
+}
+
+/* Hero Section */
+.menu .section-title {
+  text-align: center;
+  padding: 2rem 0 1rem;
+}
+
+.menu .section-title p {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  display: inline-block;
+  color: #c19b66;
+}
+.separator {
+  max-width: 100px;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.menu .section-title h1 {
+  font-size: 4rem;
+  color: #e8e8e8;
+  margin-bottom: 1rem;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.menu-section {
+  margin-bottom: 2rem;
+  display: flex;
+  overflow: hidden;
+  border: 1px solid rgba(193, 155, 102, 0.2);
+  border-radius: 6px;
+}
+
+.menu-section-image-container {
+  flex: 0 0 40%;
+  width: 40%;
+  position: relative;
+  overflow: hidden;
+  align-self: stretch;
+}
+
+.menu-section-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  min-height: 100%;
+}
+
+.menu-section-content {
+  flex: 0 0 60%;
+  width: 60%;
+  background: #151f21;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-section-header {
+  margin-bottom: 2.5rem;
+}
+
+.menu-section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e8e8e8;
+  margin: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: "Inter", "Source Sans Pro", sans-serif;
+}
+
+.menu-items {
+  flex: 1;
+  margin-bottom: 2rem;
+}
+
+.menu-item {
+  margin-bottom: 1.5rem;
+}
+
+.menu-item:last-child {
+  margin-bottom: 0;
+}
+
+.menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  gap: 1rem;
+}
+
+.menu-item-name {
+  font-size: 1.1rem;
+  color: #e8e8e8;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+  font-family: "Inter", "Source Sans Pro", sans-serif;
+}
+
+.menu-item-price-line {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.price-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #c19b66 50%, transparent);
+  border-bottom: 1px dotted #c19b66;
+  min-width: 20px;
+}
+
+.menu-item-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e8e8e8;
+  white-space: nowrap;
+  font-family: "Inter", "Source Sans Pro", sans-serif;
+}
+
+.menu-item-description {
+  color: #c8c8c8;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+  font-style: italic;
+  font-size: 0.9rem;
+  font-family: "Inter", "Source Sans Pro", sans-serif;
+}
+
+.menu-item-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #c19b66 50%, transparent);
+  border-bottom: 1px dotted #c19b66;
+  margin-top: 1rem;
+}
+
+@media (max-width: 968px) {
+  .menu-section {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .menu-section-image-container {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 300px;
+  }
+
+  .menu-section-content {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .menu-section-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 968px) {
+  .menu .section-title h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu .section-title h1 {
+    font-size: 2rem;
+  }
+
+  .menu-section-content {
+    padding: 1.5rem;
+  }
+
+  .menu-section-header {
+    margin-bottom: 2rem;
+  }
+
+  .menu-section-title {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .menu-item-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .menu-item-name {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .menu-item-price-line {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .menu-item-description {
+    font-size: 0.85rem;
+  }
+
+  .section-title .section-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #e8e8e8;
+  }
+
+  .section-description .desktop-text {
+    display: none;
+  }
+
+  .section-description .mobile-text {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu .section-title h1 {
+    font-size: 1.75rem;
+  }
+
+  .menu {
+    padding: 1rem 0;
+  }
+
+  .menu-section-image-container {
+    height: 250px;
+  }
+
+  .menu-section-content {
+    padding: 1.25rem;
+  }
+
+  .menu-section-title {
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+  }
+
+  .menu-item-name {
+    font-size: 0.95rem;
+  }
+
+  .menu-item-price {
+    font-size: 1rem;
+  }
+
+  .menu-item-description {
+    font-size: 0.8rem;
+  }
+}

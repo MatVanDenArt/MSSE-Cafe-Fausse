@@ -62,7 +62,7 @@ Before running this application, make sure you have the following installed:
 ### 1. Clone the Repository
 ```bash
 git clone <repository-url>
-cd Cafe_Fausse_SRS
+cd Cafe_Fausse
 ```
 
 ### 2. Database Setup
@@ -109,14 +109,34 @@ npm install
 
 ## 🏃‍♂️ Running the Application
 
-### Start the Backend Server
+### Quick Start (Recommended)
+
+Use the startup scripts to launch both servers automatically:
+
+**Windows:**
+```bash
+# CMD
+scripts\start_dev.bat
+
+# PowerShell
+.\scripts\start_dev.ps1
+```
+
+**Linux/Mac:**
+```bash
+./scripts/start_dev.sh
+```
+
+### Manual Start
+
+#### Start the Backend Server
 ```bash
 cd backend
 python app.py
 ```
 The Flask server will start on `http://localhost:5000`
 
-### Start the Frontend Development Server
+#### Start the Frontend Development Server
 ```bash
 cd frontend
 npm start
@@ -265,7 +285,7 @@ Update restaurant information in `backend/app.py`:
 ## 📝 Project Structure
 
 ```
-Cafe_Fausse_SRS/
+Cafe_Fausse/
 ├── frontend/                 # React application
 │   ├── public/
 │   ├── src/

@@ -31,7 +31,7 @@ A full-stack web application for Café Fausse, an authentic French bistro restau
 ## 🛠️ Technology Stack
 
 ### Frontend
-- **React 18**: Modern React with hooks and functional components
+- **React 19**: Modern React with hooks and functional components
 - **React Router**: Client-side routing
 - **CSS3**: Custom styling with Grid and Flexbox
 - **Axios**: HTTP client for API calls
@@ -68,10 +68,11 @@ cd Cafe_Fausse
 ### 2. Database Setup
 ```bash
 # Create PostgreSQL database
-createdb cafe_fausse
+# Note: Database name should match your configuration (default: Cafe_Fausse_Database)
+createdb Cafe_Fausse_Database
 
 # Run the schema
-psql cafe_fausse < database/schema.sql
+psql Cafe_Fausse_Database < database/schema.sql
 ```
 
 ### 3. Backend Setup
@@ -92,10 +93,14 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 # Create .env file (copy from env_example.txt)
-cp env_example.txt .env
+# On Windows:
+copy env_example.txt .env
+# On macOS/Linux:
+# cp env_example.txt .env
 
 # Edit .env file with your database credentials
-# DATABASE_URL=postgresql://username:password@localhost/cafe_fausse
+# DATABASE_URL=postgresql+pg8000://username:password@localhost/Cafe_Fausse_Database
+# Note: Use postgresql+pg8000:// for the pg8000 driver, or postgresql:// for psycopg2
 ```
 
 ### 4. Frontend Setup
@@ -161,12 +166,14 @@ CREATE TABLE customers (
 ```sql
 CREATE TABLE reservations (
     id SERIAL PRIMARY KEY,
-    customer_id INTEGER NOT NULL REFERENCES customers(id),
+    customer_id INTEGER NOT NULL REFERENCES customers(id) ON DELETE CASCADE,
     time_slot TIMESTAMP NOT NULL,
     table_number INTEGER NOT NULL CHECK (table_number >= 1 AND table_number <= 30),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
+
+**Note:** The actual schema file (`database/schema.sql`) includes additional indexes for performance optimization.
 
 ## 🔌 API Endpoints
 
@@ -229,6 +236,27 @@ fetch('http://localhost:5000/api/reservations', {
 
 ## 🧪 Testing
 
+### Automated Test Suite
+The project includes a comprehensive test suite located in `backend/tests/`:
+
+```bash
+# Run the comprehensive system health check
+cd backend/tests
+python test._system_health_check.py
+
+# Or use the batch file from project root
+scripts\run_demo_tests.bat
+```
+
+The test suite includes:
+- API health checks
+- Newsletter signup testing
+- Reservation creation
+- **Overbooking prevention demonstration** (books all 30 tables, then blocks additional bookings)
+- Restaurant info and menu API tests
+
+See `backend/tests/TESTING_SUITE_README.md` for detailed documentation.
+
 ### Manual Testing Checklist
 - [ ] Navigation works on all pages
 - [ ] Forms validate input correctly
@@ -256,18 +284,20 @@ The application is fully responsive with breakpoints at:
 ### Environment Variables
 Create a `.env` file in the backend directory:
 ```
-DATABASE_URL=postgresql://username:password@localhost/cafe_fausse
+DATABASE_URL=postgresql+pg8000://username:password@localhost/Cafe_Fausse_Database
 SECRET_KEY=your-secret-key-here
 FLASK_ENV=development
 FLASK_DEBUG=True
 ```
 
+**Note:** The default database name is `Cafe_Fausse_Database`. If you use a different name, update the `DATABASE_URL` accordingly. The connection string uses `postgresql+pg8000://` for the pg8000 driver (as specified in requirements.txt).
+
 ### Restaurant Configuration
-Update restaurant information in `backend/app.py`:
-- Restaurant name and address
-- Business hours
+Restaurant information is configured in `backend/app.py`:
+- Restaurant name and address (in `/api/restaurant-info` endpoint)
+- Business hours (configured in `backend/config.py` - `BUSINESS_HOURS`)
 - Contact information
-- Menu items
+- Menu items (in `/api/menu` endpoint)
 
 ## 🚀 Deployment
 
@@ -287,23 +317,38 @@ Update restaurant information in `backend/app.py`:
 ```
 Cafe_Fausse/
 ├── frontend/                 # React application
-│   ├── public/
-│   ├── src/
-│   │   ├── components/      # Reusable components
-│   │   ├── pages/          # Page components
-│   │   ├── App.js          # Main app component
-│   │   └── App.css         # Global styles
-│   └── package.json
+│   ├── public/              # Static public files
+│   ├── src/                 # Source code
+│   │   ├── components/      # Reusable components (Header, Footer)
+│   │   ├── pages/           # Page components (Home, Menu, Reservations, etc.)
+│   │   ├── App.js           # Main app component
+│   │   └── App.css          # Global styles
+│   ├── build/               # Production build output
+│   └── package.json         # Node.js dependencies
 ├── backend/                 # Flask application
-│   ├── app.py              # Main Flask app
-│   ├── models.py           # Database models
-│   ├── config.py           # Configuration
-│   ├── requirements.txt    # Python dependencies
-│   └── env_example.txt     # Environment variables template
-├── database/               # Database files
-│   └── schema.sql          # Database schema
-├── Docs/                   # Documentation and images
-└── README.md              # This file
+│   ├── app.py               # Main Flask app and API routes
+│   ├── models.py            # Database models (SQLAlchemy)
+│   ├── config.py            # Configuration class
+│   ├── requirements.txt     # Python dependencies
+│   ├── env_example.txt      # Environment variables template
+│   ├── instance/            # Instance folder (SQLite database if used)
+│   ├── scripts/             # Utility scripts
+│   │   ├── create_tables.py
+│   │   ├── check_tables.py
+│   │   └── view_data.py
+│   └── tests/               # Test suite
+│       ├── test._system_health_check.py
+│       └── test_full_overbooking.py
+├── database/                # Database files
+│   └── schema.sql           # PostgreSQL database schema
+├── scripts/                 # Project startup scripts
+│   ├── start_dev.bat        # Windows CMD startup script
+│   ├── start_dev.ps1       # Windows PowerShell startup script
+│   ├── start_dev.sh         # Linux/Mac startup script
+│   └── run_demo_tests.bat   # Demo test runner
+├── Docs/                    # Documentation and images
+├── DEMO_QUICK_START.md      # Quick demo guide
+└── README.md                # This file
 ```
 
 ## 🤝 Contributing

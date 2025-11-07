@@ -520,7 +520,7 @@ const Gallery = () => {
                 alt="separator"
                 className="separator"
               />
-              <p className="description">
+              <p className="description" style={{ color: "#c8c8c8" }}>
                 Join us for an unforgettable evening. We recommend making a
                 reservation, especially for weekend dining.
               </p>

@@ -94,10 +94,9 @@ class CafeFausseTester:
     def test_single_reservation(self):
         """Test 3: Single Reservation Creation"""
         try:
-            # Use a unique future time slot based on current time to avoid conflicts
-            # Using days=4 and current hour + 1 to ensure it's in the future and different from overbooking test
-            now = datetime.now()
-            future_time = (now + timedelta(days=4)).replace(hour=(now.hour + 1) % 24, minute=0, second=0, microsecond=0).strftime('%Y-%m-%dT%H:%M:%S')
+            # Use a unique future time slot to avoid conflicts with other tests
+            # Using days=4 and hour=20 to ensure it's different from overbooking test (days=2, hour=19)
+            future_time = (datetime.now() + timedelta(days=4)).replace(hour=20, minute=0, second=0).strftime('%Y-%m-%dT%H:%M:%S')
             
             data = {
                 "customer_name": "Demo Customer",
@@ -129,10 +128,8 @@ class CafeFausseTester:
         print("🎭 OVERBOOKING PREVENTION DEMONSTRATION")
         print("="*60)
         
-        # Use a time slot based on current time to avoid conflicts
-        # Using days=2 and current hour to ensure it's in the future
-        now = datetime.now()
-        test_time = (now + timedelta(days=2)).replace(hour=now.hour, minute=0, second=0, microsecond=0).strftime('%Y-%m-%dT%H:%M:%S')
+        # Use a specific time slot for this test
+        test_time = (datetime.now() + timedelta(days=2)).strftime('%Y-%m-%dT19:00:00')
         
         self.log_test("Overbooking Test Setup", "INFO", 
             f"Testing time slot: {test_time}")

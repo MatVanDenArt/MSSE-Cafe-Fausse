@@ -10,10 +10,11 @@ from datetime import datetime, timedelta
 
 def test_full_overbooking():
     url = 'http://localhost:5000/api/reservations'
-    # Use a dynamic future time slot to avoid conflicts with previous test runs
-    # Using days=3 to ensure it's different from system health check (which uses days=2)
-    future_date = datetime.now() + timedelta(days=3)
-    time_slot = future_date.replace(hour=20, minute=0, second=0).strftime('%Y-%m-%d %H:%M:%S')
+    # Use a dynamic future time slot based on current time to avoid conflicts
+    # Using days=3 and current hour to ensure it's in the future and different from system health check
+    now = datetime.now()
+    future_date = now + timedelta(days=3)
+    time_slot = future_date.replace(hour=now.hour, minute=0, second=0, microsecond=0).strftime('%Y-%m-%d %H:%M:%S')
     
     print('🧪 Comprehensive Overbooking Test')
     print('=' * 50)

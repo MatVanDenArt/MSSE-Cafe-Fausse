@@ -71,8 +71,6 @@
   font-weight: 400;
   letter-spacing: unset;
   font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 0;
 }
 
 .gallery-filters {
@@ -186,7 +184,7 @@
   padding: 3rem 2rem;
   background: linear-gradient(135deg, #1a2428 0%, #151f21 100%);
   border-radius: 5px;
-  /*box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(193, 155, 102, 0.1);*/
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(193, 155, 102, 0.1);
   border: 1px solid rgba(193, 155, 102, 0.2);
   overflow: hidden;
 }

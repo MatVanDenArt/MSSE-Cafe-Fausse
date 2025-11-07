@@ -129,10 +129,8 @@ class CafeFausseTester:
         print("🎭 OVERBOOKING PREVENTION DEMONSTRATION")
         print("="*60)
         
-        # Use a time slot based on current time to avoid conflicts
-        # Using days=2 and current hour to ensure it's in the future
-        now = datetime.now()
-        test_time = (now + timedelta(days=2)).replace(hour=now.hour, minute=0, second=0, microsecond=0).strftime('%Y-%m-%dT%H:%M:%S')
+        # Use a specific time slot for this test
+        test_time = (datetime.now() + timedelta(days=2)).strftime('%Y-%m-%dT19:00:00')
         
         self.log_test("Overbooking Test Setup", "INFO", 
             f"Testing time slot: {test_time}")

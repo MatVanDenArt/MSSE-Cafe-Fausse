@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import "./Gallery.css";
 
 const Gallery = () => {
@@ -503,35 +502,6 @@ const Gallery = () => {
                 ))}
               </div>
             )}
-          </div>
-        </section>
-
-        {/* Reservation CTA Section */}
-        <section
-          className="section"
-          style={{ paddingBottom: "4rem", paddingTop: "2rem" }}
-        >
-          <div className="container">
-            <div className="section-title">
-              <p>reservation</p>
-              <h3>Your Table is Waiting</h3>
-              <img
-                src="/images/separator.svg"
-                alt="separator"
-                className="separator"
-              />
-              <p className="description">
-                Join us for an unforgettable evening. We recommend making a
-                reservation, especially for weekend dining.
-              </p>
-              <Link
-                to="/reservations"
-                className="btn btn-large"
-                style={{ marginTop: "2rem" }}
-              >
-                Make a Reservation
-              </Link>
-            </div>
           </div>
         </section>
       </div>

@@ -508,8 +508,8 @@ const Gallery = () => {
 
         {/* Reservation CTA Section */}
         <section
-          className="section"
-          style={{ paddingBottom: "4rem", paddingTop: "2rem" }}
+          className="section section-dark"
+          style={{ paddingBottom: "4rem", marginTop: "4rem" }}
         >
           <div className="container">
             <div className="section-title">

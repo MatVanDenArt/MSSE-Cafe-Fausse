@@ -507,10 +507,7 @@ const Gallery = () => {
         </section>
 
         {/* Reservation CTA Section */}
-        <section
-          className="section"
-          style={{ paddingBottom: "4rem", paddingTop: "2rem" }}
-        >
+        <section className="section" style={{ paddingBottom: "4rem", paddingTop: "2rem" }}>
           <div className="container">
             <div className="section-title">
               <p>reservation</p>
@@ -520,7 +517,7 @@ const Gallery = () => {
                 alt="separator"
                 className="separator"
               />
-              <p className="description">
+              <p className="description" style={{ color: "#c8c8c8" }}>
                 Join us for an unforgettable evening. We recommend making a
                 reservation, especially for weekend dining.
               </p>

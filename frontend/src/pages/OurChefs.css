@@ -53,6 +53,14 @@
   margin-top: 0.5rem;
 }
 
+.our-chefs .section-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .our-chefs .section-title p {
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -61,6 +69,25 @@
   font-weight: 500;
   display: inline-block;
   color: #c19b66;
+}
+
+.our-chefs .section-title h3 {
+  font-size: 2.5rem;
+  color: #e8e8e8;
+  margin-bottom: 1rem;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.our-chefs .section-title .description {
+  color: #c8c8c8;
+  text-transform: unset;
+  font-weight: 400;
+  letter-spacing: unset;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 0;
 }
 
 /* Featured Chef Section */

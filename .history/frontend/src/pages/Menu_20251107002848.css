@@ -54,10 +54,6 @@
 
 /* Hero Section */
 .menu .section-title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   text-align: center;
   padding: 2rem 0 1rem;
 }
@@ -85,25 +81,6 @@
   font-family: "Cormorant Garamond", serif;
   font-weight: 600;
   line-height: 1.2;
-}
-
-.menu .section-title h3 {
-  font-size: 2.5rem;
-  color: #e8e8e8;
-  margin-bottom: 1rem;
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.menu .section-title .description {
-  color: #c8c8c8;
-  text-transform: unset;
-  font-weight: 400;
-  letter-spacing: unset;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 0;
 }
 
 .menu-section {
@@ -140,7 +117,7 @@
 }
 
 .menu-section-header {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .menu-section-title {
@@ -263,7 +240,7 @@
   }
 
   .menu-section-header {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 
   .menu-section-title {
@@ -324,12 +301,12 @@
   }
 
   .menu-section-title {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     letter-spacing: 0.5px;
   }
 
   .menu-item-name {
-    font-size: 1.15rem;
+    font-size: 0.95rem;
   }
 
   .menu-item-price {

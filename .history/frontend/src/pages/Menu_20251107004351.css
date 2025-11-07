@@ -54,10 +54,6 @@
 
 /* Hero Section */
 .menu .section-title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   text-align: center;
   padding: 2rem 0 1rem;
 }
@@ -103,7 +99,6 @@
   letter-spacing: unset;
   font-size: 1.1rem;
   line-height: 1.8;
-  margin-bottom: 0;
 }
 
 .menu-section {
